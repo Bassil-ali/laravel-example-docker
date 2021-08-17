@@ -9,10 +9,10 @@ services:
     image: library/nginx
     container_name: nginx-bassil-ali
     volumes:
-    - ./src/app:/var/www/html
+    - ./src:/var/www/html
     - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
     ports:
-      - "8080:80"
+      - "8088:80"
     depends_on:
       - php
       - mysql
@@ -59,7 +59,7 @@ services:
       dockerfile: Dockerfile
     container_name: php-bassil-ali
     volumes:
-      - ./src/app:/var/www/html
+      - ./src:/var/www/html
     ports:
       - "9000:9000"
     networks:
